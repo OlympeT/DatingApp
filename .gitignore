@@ -3,3 +3,5 @@ API/bin/
 API/obj/
 .DS_Store
 API/.DS_Store
+API/appsettings.json
+client/node_modules
