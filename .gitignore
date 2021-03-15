@@ -5,3 +5,4 @@ API/obj/
 API/.DS_Store
 API/appsettings.json
 client/node_modules
+client/ssl
