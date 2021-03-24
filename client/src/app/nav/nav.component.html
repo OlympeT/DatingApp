@@ -17,7 +17,7 @@
             <div class="dropdown-menu mt-3" *dropdownMenu>
                 <a class="dropdown-item">Edit Profile</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" (click)="logout()">LogOut</a>
+                <a class="dropdown-item" (click)="logout()">LoutOut</a>
             </div>
         </div>
         <form *ngIf="(accountService.currentUser$ | async) === null" #loginForm="ngForm" class="form-inline mt-2 mt-md-0" (ngSubmit)="login()" autocomplete="off">
