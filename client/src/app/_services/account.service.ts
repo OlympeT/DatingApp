@@ -21,6 +21,7 @@ export class AccountService {
         const user = response;
         if (user) {
           localStorage.setItem('user', JSON.stringify(user));
+          localStorage.setItem('token', user.token);
           this.currentUserSource.next(user);
         }
       })
@@ -32,6 +33,7 @@ export class AccountService {
       map((user: any) => {
         if (user) {
           localStorage.setItem('user', JSON.stringify(user));
+          localStorage.setItem('token', user.token);
           this.currentUserSource.next(user);
         }
         return user;
@@ -45,6 +47,15 @@ export class AccountService {
 
   logout() {
     localStorage.removeItem('user');
-    this.currentUserSource.next(undefined); 
+    localStorage.removeItem('token');
+    this.currentUserSource.next(null as any); 
+  }
+
+  public isAuthenticated(): boolean {
+    const token = localStorage.getItem('token');
+    
+    // Check whether the token is expired and return
+    // true or false
+    return !!localStorage.getItem('token');
   }
 }
